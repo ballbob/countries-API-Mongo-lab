@@ -11,7 +11,6 @@ CountryFetcher.prototype = {
     request.onload = function(){
       
       if(request.status === 200){
-        console.log("working")
         var countriesJsonString = request.responseText
 
         var countries = JSON.parse(countriesJsonString)
