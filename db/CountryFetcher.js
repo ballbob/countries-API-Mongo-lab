@@ -1,9 +1,8 @@
-var ApiFetcher = function(address){
+var CountryFetcher = function(address){
   this.address = address
-  this.countries = []
 }
 
-ApiFetcher.prototype = {
+CountryFetcher.prototype = {
   fetch: function(functionWhenFinished){
     var request = new XMLHttpRequest()
 
@@ -21,5 +20,9 @@ ApiFetcher.prototype = {
     request.send()
 
     countries.log(this.countries)
+
+    functionWhenFinished(this.countries)
   }
 }
+
+module.exports = CountryFetcher
