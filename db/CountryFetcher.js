@@ -17,6 +17,7 @@ CountryFetcher.prototype = {
         functionWhenFinished(this.countries)
       }
     }.bind(this)
+    
     request.send()
 
     countries.log(this.countries)

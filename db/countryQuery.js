@@ -11,7 +11,15 @@ var CountryQuery = function(){
 CountryQuery.prototype = {
 
   populateDatabase: function(){
-    
+    fetcher.fetch(function(){
+      MongoClient.connect(this.url,function(error,db){
+        if(db){
+        var countriesDb = db.collection('countries')
+
+        countriesDb.insert(countries)
+        }
+      })
+    })
   }
 
 }
